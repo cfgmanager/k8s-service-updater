@@ -1,0 +1,26 @@
+[project]
+name = "k8s_service_updater"
+version = "0.2.0"
+description = "K8s Service updater with NAT GW IP information"
+readme = "README.md"
+authors = [
+    { name = "Alex Zaitchenko", email = "alexz@zasmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "asyncio>=4.0.0",
+    "kubernetes>=34.1.0",
+    "pydantic>=2.12.5",
+]
+
+[project.scripts]
+serviceupdater = "k8s_service_updater:main"
+
+[build-system]
+requires = ["uv_build>=0.9.16,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.8",
+]
