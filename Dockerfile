@@ -13,5 +13,3 @@ LABEL org.opencontainers.image.licenses=Apache-2.0
 
 RUN --mount=type=bind,from=builder,source=/build/dist,target=/dist \
   pip install $(find /dist -name '*.whl' -print)
-RUN ls -la /
-RUN which serviceupdater
